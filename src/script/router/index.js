@@ -1,15 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
-
+import Index from '@/script/components/Index'
+import Board from '@/script/components/board'
+import Sort from '@/script/components/sort'
 Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      component: Index,
+      children:[
+      	{
+      		path:'board',
+      		component:Board
+      	},
+      	{
+      		path:'sort',
+      		component:Sort
+      	}
+      ]
     }
   ]
 })

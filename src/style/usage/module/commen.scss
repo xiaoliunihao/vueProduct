@@ -1,14 +1,79 @@
+@import "../../lib/fragment/yo-header";
+@font-face {
+  font-family: "yofont";
+  src: url("/static/iconfont/iconfont.woff") format("woff"),
+   url("/static/iconfont/iconfont.ttf") format("truetype"); 
+}
 #app{
     height:100%;
     width:100%;
 }
-header{
-    width:100%;
-    height:0.44rem;
-    background:yellow;
+.yo-header{
+    background-color:gray;
+    .hide{
+        display:none;
+    }
+    .title_txt{
+        font-size:0.18rem;
+        font-weight:normal;
+    }
 }
 footer{
     width:100%;
-    height:0.55rem;
-    background: blue;
+    height:0.5rem;
+    ul{
+        width:100%;
+        height:100%;
+        background:#fff;
+        @include flexbox();
+        @include border(1px 0 0 0,gray);
+        @include flex-direction(row);
+        li{
+            height:100%;
+            @include flex;
+            @include flexbox();
+            padding-top:0.06rem;
+            @include flex-direction(column);
+            span{
+                width:100%!important;
+                text-align: center;
+                @include flex;
+                font-size:0.2rem;
+            }
+            .yuMake{
+                position: absolute;
+                background:#fff;
+                margin-left:0.13rem;
+                top:-0.18rem;
+                padding-top:0.03rem;
+                padding-left:0.01rem;
+                @include flexbox();
+                border-top:1px;
+                display: block;
+                z-index: 9999;
+                border-radius:0.5rem;
+                line-height:0.5rem;
+                font-size:0.46rem;
+                margin-top:0.02rem;
+                height:0.5rem;
+                width:0.5rem!important;
+            }
+            b{
+                text-align: center;
+                height:0.36rem;
+                font-size:0.1rem;
+                font-weight:normal;
+                line-height: 0.1rem;            
+            }
+            .makeTxt{
+                margin-top:0.29rem;
+            }
+        }
+        .active{
+            color:#f0d689;
+        }
+        .makePosi{
+            position:relative;
+        }
+    }
 }

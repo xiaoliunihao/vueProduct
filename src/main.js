@@ -1,11 +1,10 @@
 Vue.config.productionTip = false
 require("./style/app.scss")
 import Vue from "vue";
-import Index from "./script/components/Index"
+import router from "./script/router"
 
 new Vue({
 	el:"#app",
-	components:{
-		Index:Index
-	}
+	router,
+	template:"<router-view></router-view>"
 })
